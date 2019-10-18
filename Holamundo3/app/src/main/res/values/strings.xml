@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Hola mundo 3</string>
+    <string name="hintName">Introduce tu nombre</string>
+    <string name="btGreetings">Saludar</string>
+    <string name="greetingsMsg">Saludos %1$s!</string>
+    <string name="answerMsg">Devuelto: %1$s.</string>
+    <string name="btBack">Volver</string>
+</resources>
