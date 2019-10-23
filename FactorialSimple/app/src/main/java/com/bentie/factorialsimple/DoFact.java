@@ -1,14 +1,15 @@
 package com.bentie.factorialsimple;
 
+import android.os.AsyncTask;
 import android.widget.TextView;
 
-public class DoFact implements Runnable{
+import java.math.BigInteger;
 
-    private int n;
+public class DoFact extends AsyncTask<Integer, Void, Integer> {
+
     private TextView tvResult;
 
-    public DoFact(int n, TextView tvResult){
-        this.n = n;
+    public DoFact(TextView tvResult){
         this.tvResult = tvResult;
     }
 
@@ -20,7 +21,18 @@ public class DoFact implements Runnable{
     }
 
     @Override
-    public void run() {
-        tvResult.setText("El resultado es: " + factorial(n));
+    protected void onPreExecute() {
+        tvResult.setText("Calculando...");
+    }
+
+    @Override
+    protected Integer doInBackground(Integer... integers) {
+        return factorial(integers[0]);
+    }
+
+    @Override
+    protected void onPostExecute(Integer integer) {
+        super.onPostExecute(integer);
+        tvResult.setText("El resultado es: " + integer);
     }
 }

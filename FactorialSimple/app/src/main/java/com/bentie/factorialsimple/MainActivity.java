@@ -33,7 +33,9 @@ public class MainActivity extends AppCompatActivity {
                     number = 0;
                 else
                     number = Integer.parseInt(n);
-                runOnUiThread(new DoFact(number, tvResult));
+
+                DoFact factor = new DoFact(tvResult);
+                factor.execute(number);
             }
         });
     }
