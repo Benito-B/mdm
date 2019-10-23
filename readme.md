@@ -12,4 +12,5 @@ DistintasFormasInvocarEventos -> Tres maneras diferentes de lanzar eventos<br />
 personaentreactivities -> Paso de objeto persona a través de Bundle<br />
 listaSimple -> Ejemplo de uso de adapter en lista y spinner<br />
 listaPersonas -> Ejemplo de uso de adapter extendido con objeto persona en listas<br />
-spinnerPersonas -> Ejemplo de uso de adapter extendido con objeto persona en spinners
+spinnerPersonas -> Ejemplo de uso de adapter extendido con objeto persona en spinners<br />
+factorialSimple -> Ejemplo de multithreading en android con un factorial y runOnUiThread()<br />
