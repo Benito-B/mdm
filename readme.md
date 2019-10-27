@@ -14,3 +14,4 @@
 **listaPersonas** -> Ejemplo de uso de adapter extendido con objeto persona en listas<br />
 **spinnerPersonas** -> Ejemplo de uso de adapter extendido con objeto persona en spinners<br />
 **factorialSimple** -> Ejemplo de multithreading en android con un factorial y AsyncTask<br />
+**ListaDobleConObjetos** -> Dos listas con adaptador personalizado y objetos en ellas<br />

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2018 Benito Barreiro <BenitoBarreiro89@gmail.com>
+  -->
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/book_relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/book_image"
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:background="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/book_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@id/book_image"
+        android:text="Título del libro"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/book_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/book_title"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@id/book_image"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="Esto es la descripción del libro\ny puede ocupar varias líneas."
+        android:textSize="14sp" />
+
+</RelativeLayout>

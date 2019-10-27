@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2018 Benito Barreiro <BenitoBarreiro89@gmail.com>
+  -->
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="10dp">
+
+    <ImageView
+        android:id="@+id/author_image"
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:background="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/author_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/author_image"
+        android:text="Nombre del autor"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/author_written"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/author_name"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/author_image"
+        android:text="Libros escritos: 5"
+        android:textSize="14sp" />
+
+</RelativeLayout>
+

@@ -1,0 +1,8 @@
+<!--
+  ~ Copyright (c) 2018 Benito Barreiro <BenitoBarreiro89@gmail.com>
+  -->
+
+<resources>
+    <string name="app_name">Listadobleconobjetos</string>
+    <string name="str_books_written">Libros escritos: %d</string>
+</resources>
