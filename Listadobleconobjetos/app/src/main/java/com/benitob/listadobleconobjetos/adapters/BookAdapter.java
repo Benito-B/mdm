@@ -13,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.benitob.listadobleconobjetos.R;
-import com.benitob.listadobleconobjetos.model.Author;
 import com.benitob.listadobleconobjetos.model.Book;
 
 import java.util.List;

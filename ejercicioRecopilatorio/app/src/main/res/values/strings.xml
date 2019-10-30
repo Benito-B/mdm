@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">EjercicioRecopilatorio</string>
+    <string name="zone_price">€/kg: %d</string>
+</resources>

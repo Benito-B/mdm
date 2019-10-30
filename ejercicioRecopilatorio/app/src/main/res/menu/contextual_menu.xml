@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/contextual_menu_opt_one"
+        android:title="Opción una"/>
+
+    <item
+        android:id="@+id/contextual_menu_opt_two"
+        android:title="Opción dos"/>
+
+</menu>
