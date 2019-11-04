@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">EjercicioRecopilatorio</string>
     <string name="zone_price">€/kg: %d</string>
+    <string name="calculation_result">El coste de tu envío sería %.2f.</string>
 </resources>

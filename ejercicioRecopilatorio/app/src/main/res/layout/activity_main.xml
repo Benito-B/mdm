@@ -19,15 +19,79 @@
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:background="@drawable/ic_logo"
+        android:layout_marginStart="95dp"
         android:layout_toEndOf="@id/companyname"
-        android:layout_marginStart="15dp"/>
+        android:src="@drawable/ic_logo"
+        android:id="@+id/company_logo"/>
 
     <Spinner
+        android:id="@+id/spinnerZone"
+        android:layout_width="224dp"
+        android:layout_height="64dp"
+        android:layout_below="@id/companyname"
+        android:layout_marginTop="16dp"
+        tools:listitem="@layout/zone_spinner_item" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/spinnerZone"
+        android:layout_below="@id/company_logo"
+        android:layout_marginTop="10dp"
+        android:id="@+id/rg_fares">
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tarifa normal"
+            android:id="@+id/rb_fare_normal"
+            android:checked="true"/>
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tarifa urgente"
+            android:id="@+id/rb_fare_urgent"/>
+    </RadioGroup>
+
+    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/companyname"
-        android:id="@+id/spinnerZone"
-        tools:listitem="@layout/zone_spinner_item"/>
+        android:text="Caja regalo"
+        android:layout_below="@id/rg_fares"
+        android:id="@+id/cb_gift"/>
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Con tarjeta dedicada"
+        android:layout_below="@id/rg_fares"
+        android:layout_toEndOf="@id/cb_gift"
+        android:id="@+id/cb_giftcard"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Introduce peso del paquete"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/cb_gift"
+        android:inputType="number"
+        android:id="@+id/et_weight"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calcular coste"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/et_weight"
+        android:id="@+id/bt_calculate"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:layout_below="@id/bt_calculate"
+        android:id="@+id/tv_result"/>
 
 </RelativeLayout>
