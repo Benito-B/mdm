@@ -4,7 +4,10 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.util.AttributeSet;
 import android.view.View;
+
+import androidx.annotation.Nullable;
 
 
 /**
@@ -15,6 +18,10 @@ public class Monigote extends View {
 
     public Monigote(Context context) {
         super(context);
+    }
+
+    public Monigote(Context context, @Nullable AttributeSet attrs) {
+        super(context, attrs);
     }
 
     @Override

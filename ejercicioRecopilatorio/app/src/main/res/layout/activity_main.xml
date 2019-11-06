@@ -80,18 +80,9 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Calcular coste"
+        android:text="Calcular envío"
         android:layout_marginTop="10dp"
         android:layout_below="@id/et_weight"
         android:id="@+id/bt_calculate"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:textSize="16dp"
-        android:textStyle="bold"
-        android:layout_below="@id/bt_calculate"
-        android:id="@+id/tv_result"/>
 
 </RelativeLayout>

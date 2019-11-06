@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/contextual_menu_opt_one"
-        android:title="Opción una"/>
+        android:title="Info de zona"/>
 
     <item
         android:id="@+id/contextual_menu_opt_two"

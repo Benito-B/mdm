@@ -16,4 +16,4 @@
 **factorialSimple** -> Ejemplo de multithreading en android con un factorial y AsyncTask<br />
 **ListaDobleConObjetos** -> Dos listas con adaptador personalizado y objetos en ellas<br />
 **DibujandoEnCanvas** -> Ejemplo de uso de canvas con pinceles <br />
-**EjercicioRecopilatorio** -> Ejercicio tipo examen 1ª ev<br />
+**EjercicioRecopilatorio** -> Ejercicio tipo examen 1ª ev (menú contextual, menú superior con submenú, canvas, paso de objectos por intent)<br />

@@ -8,7 +8,36 @@ public class ShipmentController {
     private static final float MEDIUM_COST = 1.5f;
     private static final float HEAVY_COST = 2f;
 
-    public static float getCost(Shipment shipment){
+    private final Shipment shipment;
+
+    public ShipmentController(Shipment shipment){
+        this.shipment = shipment;
+
+    }
+
+    public String getFare(){
+        if(shipment.isUrgent())
+            return "Urgente";
+        return "Normal";
+    }
+
+    public String getDecorations(){
+        String decorations = "";
+
+        if(shipment.isGift() && shipment.hasCard())
+            return "Con caja regalo y dedicatoria.";
+
+        if(shipment.isGift())
+            decorations += "Con caja de regalo.";
+        else if(shipment.hasCard())
+            decorations += "Con tarjeta dedicada.";
+        else if(!shipment.hasCard() && !shipment.isGift())
+            decorations += "Sin extras.";
+
+        return decorations;
+    }
+
+    public float getCost(){
         float cost = 0;
         cost += shipment.getZone().getPrice();
         switch(shipment.getWeight()){

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.MenuBuilder;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.Menu;
@@ -40,13 +41,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        registerForContextMenu(findViewById(R.id.linear_layout_main));
 
         etWeight = findViewById(R.id.et_weight);
         rbUrgent = findViewById(R.id.rb_fare_urgent);
         cbGift = findViewById(R.id.cb_gift);
         cbCard = findViewById(R.id.cb_giftcard);
-        tvResult = findViewById(R.id.tv_result);
 
         spZones = findViewById(R.id.spinnerZone);
         createZones();
@@ -62,17 +61,21 @@ public class MainActivity extends AppCompatActivity {
                 Shipment shipment = new Shipment(weight,
                         (Zone)spZones.getSelectedItem(), rbUrgent.isChecked(),
                         cbGift.isChecked(), cbCard.isChecked());
-                tvResult.setText(MainActivity.this.getApplicationContext().getString(R.string.calculation_result,
-                        ShipmentController.getCost(shipment)));
+
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("Shipment", shipment);
+                Intent intent = new Intent(MainActivity.this, ShipmentActivity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
     }
 
 
     private void createZones(){
-        zones.add(new Zone(1, 10, "España", R.drawable.iberia));
-        zones.add(new Zone(2, 20, "Europa", R.drawable.europe));
-        zones.add(new Zone(3, 30, "Resto del mundo", R.drawable.resto));
+        zones.add(new Zone(1, 10, "España", R.drawable.iberia, "Incluye toda España excepto Ceuta y Melilla."));
+        zones.add(new Zone(2, 20, "Europa", R.drawable.europe, "Resto de Europa incluyendo Ceuta y Melilla."));
+        zones.add(new Zone(3, 30, "Resto del mundo", R.drawable.resto, "Para envíos a fuera de Europa."));
     }
 
     @SuppressLint("RestrictedApi")//Quita error "setOptionalIconsVisible not usable here blablabla
@@ -93,7 +96,8 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Envío", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.main_menu_about:
-                Toast.makeText(this, "About", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, AboutActivity.class);
+                startActivity(intent);
                 break;
             case R.id.submenu_one:
                 Toast.makeText(this, "Tocaste el sub menú uno", Toast.LENGTH_SHORT).show();
@@ -105,26 +109,5 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
         return true;
-    }
-
-    @Override
-    public boolean onContextItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.contextual_menu_opt_one:
-                Toast.makeText(this, "Contextual menu 1", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.contextual_menu_opt_two:
-                Toast.makeText(this, "Contextual menu 2", Toast.LENGTH_SHORT).show();
-                break;
-            default:
-                return super.onContextItemSelected(item);
-        }
-        return true;
-    }
-
-    @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        super.onCreateContextMenu(menu, v, menuInfo);
-        getMenuInflater().inflate(R.menu.contextual_menu, menu);
     }
 }

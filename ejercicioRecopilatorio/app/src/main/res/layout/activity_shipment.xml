@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShipmentActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:id="@+id/shipment_zone_image"
+        android:src="@drawable/europe"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Zona: Europita"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/shipment_zone_image"
+        android:id="@+id/shipment_zone_name"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tarifa: Urgente"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/shipment_zone_name"
+        android:id="@+id/shipment_zone_fare"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Peso: 100kg"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/shipment_zone_fare"
+        android:id="@+id/shipment_zone_weight"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Decoración: Sin decoración"
+        android:layout_marginTop="25dp"
+        android:layout_below="@id/shipment_zone_weight"
+        android:id="@+id/shipment_decoration"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Coste final: 1000€"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/shipment_decoration"
+        android:id="@+id/shipment_cost"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calcular otro envío"
+        android:layout_below="@id/shipment_cost"
+        android:id="@+id/shipment_bt_back"/>
+
+</RelativeLayout>

@@ -1,6 +1,8 @@
 package com.bentie.ejerciciorecopilatorio.model;
 
-public class Shipment {
+import java.io.Serializable;
+
+public class Shipment implements Serializable {
 
     private int weight;
     private Zone zone;
