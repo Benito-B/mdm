@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        <TextView
+            android:id="@+id/pruebas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="24dp"
+            android:textColor="#FFAAF1"
+            android:textStyle="bold"
+            android:text="ALQUILER\nMEDIOS MOVIDIDAD" />
+        <ImageView
+            android:id="@+id/imagenTitulo"
+            android:layout_marginTop="15dp"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/movilidad" />
+    </LinearLayout>
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/txtResul"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="ELIGE El TIPO DE TRANSPORTE A ALQUILAR\n(pincha la imagen)"/>
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alignmentMode="alignBounds"
+        android:layout_marginTop="25dp"
+        android:paddingHorizontal="10dp"
+        android:columnCount="3"
+        android:rowCount="1">
+
+
+        <ImageView
+            android:id="@+id/img_11"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:paddingHorizontal="5dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/patinete"/>
+        <ImageView
+            android:id="@+id/img_12"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:paddingHorizontal="5dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/bicis"/>
+        <ImageView
+            android:id="@+id/img_13"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:paddingHorizontal="5dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/coches"/>
+    </GridLayout>
+
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="100dp"
+        android:id="@+id/imgResul"
+        android:layout_width="140dp"
+        android:layout_height="140dp"/>
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="140dp"
+        android:text="CONTINUAR" />
+
+</LinearLayout>

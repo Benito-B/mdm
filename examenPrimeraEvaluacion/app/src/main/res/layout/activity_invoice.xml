@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InvoiceActivity">
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="25dp"
+        android:id="@+id/invoice_iv_vehicle"
+        android:src="@drawable/bici1"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Modelo: "
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/invoice_iv_vehicle"
+        android:id="@+id/invoice_model"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/invoice_iv_vehicle"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/invoice_model"
+        android:id="@+id/invoice_tv_model"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Precio por horas: "
+        android:textStyle="bold"
+        android:layout_below="@id/invoice_model"
+        android:id="@+id/invoice_price"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/invoice_model"
+        android:layout_toEndOf="@id/invoice_price"
+        android:id="@+id/invoice_tv_price"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Coste extras: "
+        android:textStyle="bold"
+        android:layout_below="@id/invoice_price"
+        android:id="@+id/invoice_extras"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/invoice_price"
+        android:layout_toEndOf="@id/invoice_extras"
+        android:id="@+id/invoice_tv_extras"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Duración alquiler: "
+        android:textStyle="bold"
+        android:layout_below="@id/invoice_extras"
+        android:id="@+id/invoice_duration"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/invoice_extras"
+        android:layout_toEndOf="@id/invoice_duration"
+        android:id="@+id/invoice_tv_duration"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seguro: "
+        android:textStyle="bold"
+        android:layout_below="@id/invoice_duration"
+        android:id="@+id/invoice_insurance"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/invoice_duration"
+        android:layout_toEndOf="@id/invoice_insurance"
+        android:id="@+id/invoice_tv_insurance"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Coste total: "
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_below="@id/invoice_insurance"
+        android:id="@+id/invoice_total"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/invoice_insurance"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_toEndOf="@id/invoice_total"
+        android:id="@+id/invoice_tv_total"/>
+
+</RelativeLayout>

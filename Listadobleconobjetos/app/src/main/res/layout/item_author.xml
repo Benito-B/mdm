@@ -13,7 +13,7 @@
         android:id="@+id/author_image"
         android:layout_width="80dp"
         android:layout_height="100dp"
-        android:background="@mipmap/ic_launcher" />
+        android:src="@mipmap/ic_launcher" />
 
     <TextView
         android:id="@+id/author_name"

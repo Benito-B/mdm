@@ -48,7 +48,10 @@ public class AuthorAdapter extends ArrayAdapter<Author> {
         Author a = authors.get(position);
         holder.ivImage.setImageResource(a.getImage());
         holder.tvName.setText(a.getName());
-        holder.tvBooksWritten.setText(context.getString(R.string.str_books_written, a.booksWritten()));
+        if(position!=0)
+            holder.tvBooksWritten.setText(context.getString(R.string.str_books_written, a.booksWritten()));
+        else
+            holder.tvBooksWritten.setText("");
 
         return v;
     }
