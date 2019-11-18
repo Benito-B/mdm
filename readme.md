@@ -18,3 +18,4 @@
 **DibujandoEnCanvas** -> Ejemplo de uso de canvas con pinceles <br />
 **EjercicioRecopilatorio** -> Ejercicio tipo examen 1ª ev (menú contextual, menú superior con submenú, canvas, paso de objectos por intent)<br />
 **examenPrimeraEvaluacion** -> Examen de la primera 1ª ev<br />
+**cicloDeVida** -> Demostración del ciclo de vida de una activity con Toast en las callbacks del ciclo<br />
