@@ -37,7 +37,7 @@ public class DrawShapesView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        setCounter(canvas);
+        drawCounter(canvas);
         for(ShapeDrawable shape : shapes) {
             shape.draw(canvas);
         }
@@ -74,7 +74,7 @@ public class DrawShapesView extends View {
         return false;
     }
 
-    private void setCounter(Canvas canvas){
+    private void drawCounter(Canvas canvas){
         String s = "Lista de figuras por color: ";
             s += "Negro: " + counter.getBlack() + " ";
             s += "Azul: " + counter.getBlue() + " ";
