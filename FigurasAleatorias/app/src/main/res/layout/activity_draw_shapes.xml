@@ -5,17 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".RandomShapesActivity">
+    tools:context=".DrawShapesActivity">
 
-    <Button
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Redibujar"
-        android:onClick="redraw"/>
+        android:text="Toca para dibujar o borrar figuras"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
 
-    <com.bentie.figurasaleatorias.RandomShapesView
+    <com.bentie.figurasaleatorias.DrawShapesView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/random_shapes_drawing_area" />
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

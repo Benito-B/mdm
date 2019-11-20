@@ -64,19 +64,30 @@ public class RandomShapesView extends View {
     }
 
     private void drawRandomBitmap(Canvas canvas, int width, int height){
-
+        float left = RandomUtils.randomFloat(width);
+        float top = RandomUtils.randomFloat(height);
+        Bitmap b = RandomUtils.randomElement(emojis);
+        canvas.drawBitmap(b, left, top, null);
     }
 
     private void drawRandomText(Canvas canvas, int width, int height, int avgSize){
-
+        float x = RandomUtils.randomFloat(width);
+        float y = RandomUtils.randomFloat(height);
+        float size = RandomUtils.randomFloat(avgSize);
+        Paint paint = RandomUtils.randomElement(foregrounds);
+        paint.setTextSize(size);
+        canvas.drawText(message, x, y, paint);
     }
 
     private Paint makePaint(int c){
-        return new Paint(c);
+        Paint p = new Paint();
+        p.setColor(c);
+        return p;
     }
 
     private Bitmap makeBitmap(int id){
         return BitmapFactory.decodeResource(getResources(), id);
     }
+
 
 }
