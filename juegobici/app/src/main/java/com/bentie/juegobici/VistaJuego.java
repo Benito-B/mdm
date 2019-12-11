@@ -291,6 +291,7 @@ public class VistaJuego extends View {
         MediaPlayer miMediaPlayer =
                 MediaPlayer.create(getContext(), R.raw.explosion);
         miMediaPlayer.start();
+        //Si no quedan coches, detengo el juego y muestro un mensaje de victoria
         if (coches.isEmpty()){
             corriendo = false;
             getActivity().runOnUiThread(new Runnable() {
