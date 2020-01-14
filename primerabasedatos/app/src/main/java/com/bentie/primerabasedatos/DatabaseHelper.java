@@ -85,7 +85,7 @@ public class DatabaseHelper{
         List<Client> clients = new ArrayList<>();
         if(c.moveToFirst())
             do{
-                clients.add(new Client(c.getInt(c.getColumnIndex(CODE)),
+                clients.add(new Client(c.getString(c.getColumnIndex(CODE)),
                         c.getString(c.getColumnIndex(NAME)), c.getString(c.getColumnIndex(PHONE))));
             }while(c.moveToNext());
         c.close();

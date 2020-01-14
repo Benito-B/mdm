@@ -21,3 +21,4 @@
 **cicloDeVida** -> Demostración del ciclo de vida de una activity con Toast en las callbacks del ciclo<br />
 **figurasAleatorias** -> El botón de figuras aleatorias simplemente crea un montón de cosas al azar, en la activity de dibujar he implementado un contador para mostrar cuántas figuras de cada color se han dibujad <br/>
 **juegobici** -> Juego de bicicleta modificado para añadir movimiento continuo, condición de victoria y derrota<br />
+**primerabasedatos** -> Ejemplo de uso de sqlite en android con clase cliente y un spinner<br />

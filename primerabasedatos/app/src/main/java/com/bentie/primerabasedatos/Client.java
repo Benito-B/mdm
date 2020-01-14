@@ -2,24 +2,24 @@ package com.bentie.primerabasedatos;
 
 public class Client {
 
-    private int id;
+    private String id;
     private String name;
     private String phone;
 
     public Client() {
     }
 
-    public Client(int id, String name, String phone) {
+    public Client(String id, String name, String phone) {
         this.id = id;
         this.name = name;
         this.phone = phone;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
