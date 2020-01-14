@@ -24,8 +24,9 @@ public class DatabaseHelper{
    public static final String CODE = "codigo";
    public static final String NAME = "nombre";
    public static final String PHONE = "telefono";
+   public static final String IMAGE = "imagen";
    private static final String DATABASE_CREATE_CLIENTS = "create table " + DATABASE_TABLE_CLIENTS +
-           " (" + CODE + " integer primary key, " + NAME + " text not null, " + PHONE + " text not null)";
+           " (" + CODE + " integer primary key, " + NAME + " text not null, " + PHONE + " text not null, " + IMAGE + " integer not null)";
 
    public DatabaseHelper(Context context){
        this.context = context;
@@ -58,11 +59,13 @@ public class DatabaseHelper{
        dbHelper.close();
    }
 
-   public long insertItem(int cod, String nom, String tel){
+   public long insertItem(int cod, String nom, String tel, int img){
        ContentValues initialValues = new ContentValues();
        initialValues.put(CODE, cod);
        initialValues.put(NAME, nom);
        initialValues.put(PHONE, tel);
+       initialValues.put(IMAGE, img);
+       System.out.println(String.format("cod: %d, nom: %s, tel: %s, img: %d", cod, nom, tel, img));
        return db.insert(DATABASE_TABLE_CLIENTS, null, initialValues);
    }
 
@@ -80,13 +83,15 @@ public class DatabaseHelper{
    }
 
     public List<Client> getClients(){
-        String[] fields = new String[]{CODE, NAME, PHONE};
+        String[] fields = new String[]{CODE, NAME, PHONE, IMAGE};
         Cursor c = db.query(DATABASE_TABLE_CLIENTS, fields, null, null, null, null, null);
         List<Client> clients = new ArrayList<>();
         if(c.moveToFirst())
             do{
                 clients.add(new Client(c.getString(c.getColumnIndex(CODE)),
-                        c.getString(c.getColumnIndex(NAME)), c.getString(c.getColumnIndex(PHONE))));
+                        c.getString(c.getColumnIndex(NAME)),
+                        c.getString(c.getColumnIndex(PHONE)),
+                        Integer.parseInt(c.getString(c.getColumnIndex(IMAGE)))));
             }while(c.moveToNext());
         c.close();
         return clients;

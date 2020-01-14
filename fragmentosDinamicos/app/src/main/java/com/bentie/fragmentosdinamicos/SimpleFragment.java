@@ -45,6 +45,7 @@ public class SimpleFragment extends Fragment {
             iv.setImageResource(R.mipmap.ic_launcher);
         }
         tv.setText("Fragmento número: " + num);
+        System.out.println(v);
         return v;
     }
 }
