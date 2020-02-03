@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ListaTareas</string>
+    <string name="time_left">Tiempo restante: %s</string>
+</resources>

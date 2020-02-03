@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="5dp"
+    app:cardUseCompatPadding="true"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/card_relative_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/card_color"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:tint="@color/card_informative" />
+
+        <TextView
+            android:id="@+id/card_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:layout_alignParentEnd="true"
+            android:textAlignment="textEnd"
+            android:layout_toEndOf="@id/card_color"
+            android:text="01"/>
+
+        <TextView
+            android:id="@+id/card_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:layout_toEndOf="@id/card_color"
+            android:layout_below="@id/card_id"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="NOMBRE"/>
+
+        <TextView
+            android:id="@+id/card_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/card_color"
+            android:maxLines="5"
+            android:layout_marginTop="10dp"
+            android:text="ESTO ES UNA DESCRIPCIÓN NO EXCESIVAMENTE LARGA"/>
+
+        <TextView
+            android:id="@+id/card_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/card_description"
+            android:paddingTop="10dp"
+            android:maxLines="3"
+            android:text="xsadfpoih"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
