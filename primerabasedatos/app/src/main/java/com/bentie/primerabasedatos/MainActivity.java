@@ -47,12 +47,12 @@ public class MainActivity extends AppCompatActivity {
         clientSpinner.setAdapter(new ClientAdapter(this, R.layout.spinner_client_item, clients));
         Toast.makeText(this, db.getRawClients(), Toast.LENGTH_SHORT).show();
         db.close();
-       /* clientSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        clientSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Client selectedClient = (Client)clientSpinner.getSelectedItem();
                 System.out.println("Client en activity: " + selectedClient);
-                Fragment fragment = DetailFragment.newInstance(selectedClient);
+                DetailFragment fragment = DetailFragment.newInstance(selectedClient);
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.fragment_container, fragment)
@@ -63,6 +63,6 @@ public class MainActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
-        });*/
+        });
     }
 }

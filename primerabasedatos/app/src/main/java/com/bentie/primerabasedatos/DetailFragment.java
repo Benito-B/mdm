@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 public class DetailFragment extends Fragment {
 
     private Client client;
+    private View view;
 
     public static DetailFragment newInstance(Client client){
         DetailFragment df = new DetailFragment();
@@ -34,15 +35,22 @@ public class DetailFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_detail_layout, container, false);
-        TextView tvId = v.findViewById(R.id.tv_client_id);
-        TextView tvName = v.getRootView().findViewById(R.id.tv_client_name);
-        TextView tvPhone = v.getRootView().findViewById(R.id.tv_client_phone);
-        ImageView ivImage = v.getRootView().findViewById(R.id.iv_detail_image);
+        view = v;
+        return v;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        TextView tvId = view.findViewById(R.id.tv_client_id);
+        TextView tvName = view.getRootView().findViewById(R.id.tv_client_name);
+        TextView tvPhone = view.getRootView().findViewById(R.id.tv_client_phone);
+        ImageView ivImage = view.getRootView().findViewById(R.id.iv_detail_image);
         tvId.setText(client.getId());
         tvName.setText(client.getName());
         tvPhone.setText(client.getPhone());
         ivImage.setImageResource(client.getImage());
-        return v;
     }
+
 
 }
