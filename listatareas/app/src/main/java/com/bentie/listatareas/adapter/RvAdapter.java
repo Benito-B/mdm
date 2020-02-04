@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bentie.listatareas.R;
 import com.bentie.listatareas.model.Task;
 
+import java.util.Date;
 import java.util.List;
 
 public class RvAdapter extends RecyclerView.Adapter<RvAdapter.TaskViewHolder> {
@@ -44,7 +45,7 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.TaskViewHolder> {
         holder.tvDesc.setText(t.getDescription());
         String totalTime = "";
         if(t.getFinishDate() != null) {
-            long days = t.getFinishDate().getTime() / DateUtils.DAY_IN_MILLIS;
+            long days = (t.getFinishDate().getTime() - new Date().getTime()) / DateUtils.DAY_IN_MILLIS;
             long remainderFromDays = t.getFinishDate().getTime() % DateUtils.DAY_IN_MILLIS;
             long hours = remainderFromDays / DateUtils.HOUR_IN_MILLIS;
             long remainderFromHours = remainderFromDays % DateUtils.HOUR_IN_MILLIS;
@@ -57,7 +58,7 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.TaskViewHolder> {
             totalTime += seconds + " segundos.";
         }
         holder.tvDate.setText(context.getString(R.string.time_left, totalTime));
-        holder.ivUrgency.setBackgroundResource(t.getUrgency());
+        holder.ivUrgency.setImageResource(t.getUrgency());
     }
 
     @Override

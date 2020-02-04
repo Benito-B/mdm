@@ -24,17 +24,18 @@ public class TaskDAO {
 
     public List<Task> getAllTasks(){
         String[] fields = new String[]{DatabaseHelper.FIELD_TASK_ID, DatabaseHelper.FIELD_TASK_NAME,
-                DatabaseHelper.FIELD_TASK_DESCRIPTION, DatabaseHelper.FIELD_TASK_END_DATE};
+                DatabaseHelper.FIELD_TASK_DESCRIPTION, DatabaseHelper.FIELD_TASK_END_DATE, DatabaseHelper.FIELD_TASK_URGENCY};
         List<Task> tasks = new ArrayList<>();
         if(db != null){
             Cursor c = db.query(DatabaseHelper.DB_TABLE_TASKS, fields,null, null, null, null, null);
             if(c.moveToFirst()){
                 do{
-                    tasks.add(new Task(c.getInt(c.getColumnIndex(DatabaseHelper.FIELD_TASK_ID)),
+                    tasks.add(new Task(c.getInt(0),
                             c.getString(c.getColumnIndex(DatabaseHelper.FIELD_TASK_NAME)),
                             c.getString(c.getColumnIndex(DatabaseHelper.FIELD_TASK_DESCRIPTION)),
                             new Date(c.getLong(c.getColumnIndex(DatabaseHelper.FIELD_TASK_END_DATE))),
                             c.getInt(c.getColumnIndex(DatabaseHelper.FIELD_TASK_URGENCY))));
+                    System.out.println(tasks);
                 }while(c.moveToNext());
             }
             c.close();
@@ -42,14 +43,16 @@ public class TaskDAO {
         return tasks;
     }
 
-    public void insert(Task task){
+    public Task insert(Task task){
         ContentValues cv = new ContentValues();
         cv.put(DatabaseHelper.FIELD_TASK_ID, task.getId());
         cv.put(DatabaseHelper.FIELD_TASK_NAME, task.getName());
         cv.put(DatabaseHelper.FIELD_TASK_DESCRIPTION, task.getDescription());
         cv.put(DatabaseHelper.FIELD_TASK_END_DATE, task.getFinishDate().getTime());
         cv.put(DatabaseHelper.FIELD_TASK_URGENCY, task.getUrgency());
-        db.insert(DatabaseHelper.DB_TABLE_TASKS, null, cv);
+        long id = db.insert(DatabaseHelper.DB_TABLE_TASKS, null, cv);
+        task.setId((int) id);
+        return task;
     }
 
     public void delete(Task task){

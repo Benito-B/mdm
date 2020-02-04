@@ -16,7 +16,7 @@ public class DatabaseHelper {
 
     //tasks database creation query
     public static final String DB_TABLE_TASKS = "tasks";
-    public static final String FIELD_TASK_ID = "id";
+    public static final String FIELD_TASK_ID = "task_id";
     public static final String FIELD_TASK_NAME = "name";
     public static final String FIELD_TASK_DESCRIPTION = "description";
     public static final String FIELD_TASK_END_DATE = "finishdate";
@@ -51,6 +51,7 @@ public class DatabaseHelper {
 
         @Override
         public void onCreate(SQLiteDatabase db) {
+            System.out.println("CREATE TABLE TASKS: " + CREATE_TABLE_TASKS);
             db.execSQL(CREATE_TABLE_TASKS);
         }
 

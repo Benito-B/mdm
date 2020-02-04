@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Task {
 
-    private int id;
+    private Integer id;
     private int urgency;
     private String name;
     private String description;
@@ -13,7 +13,7 @@ public class Task {
     public Task() {
     }
 
-    public Task(int id, String name, String description, Date finishDate, int urgency) {
+    public Task(Integer id, String name, String description, Date finishDate, int urgency) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -21,11 +21,18 @@ public class Task {
         this.urgency = urgency;
     }
 
-    public int getId() {
+    public Task(int urgency, String name, String description, Date finishDate) {
+        this.urgency = urgency;
+        this.name = name;
+        this.description = description;
+        this.finishDate = finishDate;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

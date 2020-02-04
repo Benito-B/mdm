@@ -18,7 +18,7 @@
             android:id="@+id/card_color"
             android:layout_width="75dp"
             android:layout_height="75dp"
-            android:tint="@color/card_informative" />
+            android:src="@android:color/transparent"/>
 
         <TextView
             android:id="@+id/card_id"
