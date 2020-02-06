@@ -23,4 +23,4 @@
 **juegobici** -> Juego de bicicleta modificado para añadir movimiento continuo, condición de victoria y derrota<br />
 **primerabasedatos** -> Ejemplo de uso de sqlite en android con clase cliente, spinner de objetos y un fragmento de detalle<br />
 **FragmentosDinamicos** -> Ejemplo de cómo hacer un fragmento dinámico pasándole variables usando newInstance <br />
-**ListaTareas** -> Aplicación que permite gestionar sencillas tareas con patrón MVVM, recyclerview y base de datos <br />
+**ListaTareas** -> Aplicación que permite gestionar sencillas tareas con patrón MVVM, recyclerview y base de datos. Ahora también con SwipeController!<br />

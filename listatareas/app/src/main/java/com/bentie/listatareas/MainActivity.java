@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,16 +15,16 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bentie.listatareas.adapter.RvAdapter;
 import com.bentie.listatareas.database.DatabaseHelper;
 import com.bentie.listatareas.database.dao.TaskDAO;
 import com.bentie.listatareas.model.Task;
+import com.bentie.listatareas.swipe.SwipeControllerAction;
+import com.bentie.listatareas.swipe.SwipeControllerCallback;
 import com.bentie.listatareas.viewmodel.MainActivityViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.textfield.TextInputEditText;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -66,7 +67,15 @@ public class MainActivity extends AppCompatActivity {
         rv.setHasFixedSize(true);
         rv.setLayoutManager(new LinearLayoutManager(this));
         rv.setAdapter(adapter);
-
+        //Declaro el touchHelper pasándole mi callback personalizada y le añado el RecyclerView
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new SwipeControllerCallback(new SwipeControllerAction() {
+            @Override
+            public void onButtonClicked(int position) {
+                //Callback para borrar la tarea
+                mainActivityViewModel.deleteTask(position);
+            }
+        }));
+        itemTouchHelper.attachToRecyclerView(rv);
         //Floating action button para añadir tareas
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

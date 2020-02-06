@@ -29,6 +29,14 @@ public class MainActivityViewModel extends ViewModel {
         tasks.postValue(currentTasks);
     }
 
+    public void deleteTask(int position){
+        List<Task> currentTasks = tasks.getValue();
+        Task toDelete = currentTasks.get(position);
+        currentTasks.remove(toDelete);
+        tasks.postValue(currentTasks);
+        taskRepository.delete(toDelete);
+    }
+
     public LiveData<List<Task>> getTasks(){
         return tasks;
     }
